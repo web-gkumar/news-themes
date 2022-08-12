@@ -1,2 +1,13 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>sort</mat-icon></button>
+    <div class="w-100 mx-3"><app-header></app-header></div>
+</mat-toolbar>
+
+<mat-drawer-container class="pagecontainer" autosize>
+    <mat-drawer #drawer class="border-0">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <!-- <app-banner *ngIf="router.url == '/'"></app-banner> -->
+    <app-featured-news></app-featured-news>
+    <router-outlet></router-outlet>
+</mat-drawer-container>
