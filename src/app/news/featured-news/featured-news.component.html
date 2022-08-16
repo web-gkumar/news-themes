@@ -2,8 +2,10 @@
     <div class="container-fluid px-0">
         <mat-tab-group animationDuration="0ms">
             <mat-tab *ngFor="let data of videolist;">
-                <ng-template mat-tab-label><img src="assets/img/{{data.poster}}" class="thumbimg"> {{data.compayName}}</ng-template>
+                <ng-template mat-tab-label><img src="assets/img/{{data.poster}}" class="thumbimg"> {{data.compayName}}
+                </ng-template>
                 <div class="p-2">
+                    <youtube-player videoId="{{ data.videoId }}" suggestedQuality="default" [height]="" [width]=""></youtube-player>
                     {{data.title}}
                 </div>
             </mat-tab>

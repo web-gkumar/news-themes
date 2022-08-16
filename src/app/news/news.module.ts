@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 import { NewsRoutingModule } from './news-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -12,6 +13,7 @@ import { FeaturedNewsComponent } from './featured-news/featured-news.component';
   ],
   imports: [
     CommonModule,
+    YouTubePlayerModule,
     MaterialModule,
     NewsRoutingModule
   ],

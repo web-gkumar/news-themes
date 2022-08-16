@@ -40,7 +40,11 @@ small {font-size:11px;color:#9e9e9e;}
 }
 
 
-
+/*** News ***/
+.news {
+    .thumbimg {width:30px;height:30px;border-radius:100%;margin-right:10px;}
+    youtube-player, iframe {width:100%;height:450px;}
+}
 
 
 
