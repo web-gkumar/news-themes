@@ -29,6 +29,4 @@ export class NewsListComponent implements OnInit {
       this.apiLoaded = true;
     }
   }
-
-
 }
