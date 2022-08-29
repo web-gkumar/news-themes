@@ -1,13 +1,31 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>sort</mat-icon></button>
-    <div class="w-100 mx-3"><app-header></app-header></div>
-</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
+        <mat-toolbar color="primary">Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" (click)="drawer.toggle()">Home</a>
+            <a mat-list-item routerLink="/news" routerLinkActive="active-link" (click)="drawer.toggle()">News</a>
+        </mat-nav-list>
+    </mat-sidenav>
 
-<mat-drawer-container class="pagecontainer" autosize>
-    <mat-drawer #drawer class="border-0">
-        <app-sidebar></app-sidebar>
-    </mat-drawer>
-    <!-- <app-banner *ngIf="router.url == '/'"></app-banner> -->
-    <app-featured-news></app-featured-news>
-    <router-outlet></router-outlet>
-</mat-drawer-container>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="drawer.toggle()" class="me-2" *ngIf="isHandset$ | async"><mat-icon>sort</mat-icon></button>
+            <span>My App</span>
+            <div class="ms-5" [class.hidden]="isHandset$ | async">
+                <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+                <a mat-button routerLink="/news" routerLinkActive="active-link">News</a>
+            </div>
+            <span class="spacer"></span>
+            <button mat-icon-button><mat-icon>search</mat-icon></button>
+                <button mat-icon-button class="mx-2"><mat-icon>notifications</mat-icon></button>
+                <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>account_circle</mat-icon></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before" class="dropdownmenu">
+                    <button mat-menu-item><mat-icon class="mr-2">manage_accounts</mat-icon>Login</button>
+                    <button mat-menu-item><mat-icon class="mr-2">alternate_email</mat-icon>Profile</button>
+                    <button mat-menu-item><mat-icon class="mr-2">power_settings_new</mat-icon>Log Out</button>
+                </mat-menu>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+        <!-- <app-footer></app-footer> -->
+    </mat-sidenav-content>
+</mat-sidenav-container>

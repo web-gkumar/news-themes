@@ -5,11 +5,13 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { NewsRoutingModule } from './news-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { FeaturedNewsComponent } from './featured-news/featured-news.component';
+import { NewsListComponent } from './news-list/news-list.component';
 
 
 @NgModule({
   declarations: [
-    FeaturedNewsComponent
+    FeaturedNewsComponent,
+    NewsListComponent
   ],
   imports: [
     CommonModule,

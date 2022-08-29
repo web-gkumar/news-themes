@@ -1,0 +1,15 @@
+<section class="news py-5">
+    <div class="container">
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab *ngFor="let data of videolist;">
+                <div class="w-100">
+                    <youtube-player videoId="{{ data.videoId }}" suggestedQuality="default" [height]="" [width]=""></youtube-player>
+                </div>
+                <ng-template mat-tab-label>
+                    <div class="newsimg"><img src="assets/img/news/{{data.poster}}.jpg" class="thumbimg"></div>
+                    <div class="vidtitle"><h6 class="m-0">{{data.compayName}}</h6></div>
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</section>
