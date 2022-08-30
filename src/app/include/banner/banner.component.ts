@@ -4,7 +4,6 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
 SwiperCore.use([Pagination, Navigation]);
 
 
-
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -13,7 +12,17 @@ SwiperCore.use([Pagination, Navigation]);
 })
 export class BannerComponent implements OnInit {
 
-  slidderimg = ['assets/img/banner3.jpg', 'assets/img/banner2.jpg', 'assets/img/banner.jpg']
+  pagination = {
+    clickable: true,
+    renderBullet: function (index: number, className: string) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
+
+
+  imgurl = "assets/img/banner/"
+
+  slidderimg = ['banner1.jpg', 'banner2.jpg', 'banner3.jpg', 'banner4.jpg']
   constructor() { }
 
   ngOnInit(): void {

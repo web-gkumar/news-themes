@@ -1,5 +1,10 @@
 <section class="banner">
-    <swiper [slidesPerView]="'auto'" [spaceBetween]="0" [loop]="true" [pagination]="{clickable: true}" [navigation]="true" class="mySwiper">
-        <ng-template swiperSlide *ngFor="let data of slidderimg"><img [src]="data"></ng-template>
+    <swiper [slidesPerView]="'auto'" [spaceBetween]="0" [loop]="true" [pagination]="pagination" [navigation]="true" class="mySwiper">
+        <ng-template swiperSlide *ngFor="let data of slidderimg">
+            <img src="{{imgurl}}{{data}}">
+            <caption>
+                <h3>Facebook: Cambridge Analytica may have accessed some users’ private messages</h3>
+            </caption>
+        </ng-template>
     </swiper>
 </section>
