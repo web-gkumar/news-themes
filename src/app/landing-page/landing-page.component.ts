@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudServicesService } from '../shared/services/crud-services.service';
+import { map } from 'rxjs';
 import SwiperCore, { Pagination, Navigation } from "swiper";
 SwiperCore.use([Pagination, Navigation]);
 
@@ -9,20 +11,22 @@ SwiperCore.use([Pagination, Navigation]);
 })
 export class LandingPageComponent implements OnInit {
 
-  pagination = {
-    clickable: true,
-    renderBullet: function (index: number, className: string) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
+  bannerList:any = [];
 
-
-  imgurl = "assets/img/banner/"
-
-  slidderimg = ['banner1.jpg', 'banner2.jpg', 'banner3.jpg', 'banner4.jpg']
-  constructor() { }
+  constructor(private crudServices: CrudServicesService) { }
 
   ngOnInit(): void {
+    this.crudServices.getAllPost("BANNERS").snapshotChanges().pipe(
+      map((changes: any[]) =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      if(data && data.length > 0) {
+        this.bannerList = data;
+      }
+    });
   }
 
 }
