@@ -1,16 +1,13 @@
-import { Component, ViewEncapsulation, ViewChild, OnInit } from "@angular/core";
-import { SwiperComponent } from "swiper/angular";
+import { Component, OnInit } from '@angular/core';
 import SwiperCore, { Pagination, Navigation } from "swiper";
 SwiperCore.use([Pagination, Navigation]);
 
-
 @Component({
-  selector: 'app-banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: 'app-landing-page',
+  templateUrl: './landing-page.component.html',
+  styleUrls: ['./landing-page.component.scss']
 })
-export class BannerComponent implements OnInit {
+export class LandingPageComponent implements OnInit {
 
   pagination = {
     clickable: true,

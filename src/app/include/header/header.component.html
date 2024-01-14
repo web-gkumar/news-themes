@@ -1,0 +1,24 @@
+<header class="d-flex justify-content-between">
+    <div class="d-flex">
+        <span>My App</span>
+        <div class="mx-5">
+            <ng-container *ngFor="let item of menu">
+                <button mat-button [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ item.title }}</button>
+            </ng-container>
+        </div>
+    </div>
+
+    <div>
+        <button mat-icon-button><mat-icon>search</mat-icon></button>
+        <button mat-icon-button class="mx-2"><mat-icon>notifications</mat-icon></button>
+        <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>account_circle</mat-icon></button>
+    </div>
+</header>
+
+
+
+<mat-menu #beforeMenu="matMenu" xPosition="before" class="dropdownmenu">
+    <button mat-menu-item><mat-icon class="mr-2">manage_accounts</mat-icon>Login</button>
+    <button mat-menu-item><mat-icon class="mr-2">alternate_email</mat-icon>Profile</button>
+    <button mat-menu-item><mat-icon class="mr-2">power_settings_new</mat-icon>Log Out</button>
+</mat-menu>
