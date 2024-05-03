@@ -19,7 +19,7 @@ import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

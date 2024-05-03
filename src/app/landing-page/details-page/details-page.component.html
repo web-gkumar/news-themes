@@ -1,0 +1,8 @@
+<section class="detailspage p-3 bg-dark">
+    <ng-container *ngIf="detailsData && detailsData != undefined">
+        <iframe src="https://player.vimeo.com/video/904909472" width="640" height="460" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="details text-center py-4 text-white">
+            <h4><strong>{{detailsData.data.title}}</strong></h4>
+        </div>
+    </ng-container>
+</section>

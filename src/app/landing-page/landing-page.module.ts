@@ -7,12 +7,15 @@ import { MaterialModule } from '../include/material/material.module';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { LandingPageComponent } from './landing-page.component';
 import { NewsComponent } from './news/news.component';
-
+import { WebSeriesComponent } from './web-series/web-series.component';
+import { DetailsPageComponent } from './details-page/details-page.component';
 
 @NgModule({
   declarations: [
     LandingPageComponent,
-    NewsComponent
+    NewsComponent,
+    WebSeriesComponent,
+    DetailsPageComponent
   ],
   imports: [
     CommonModule,

@@ -13,6 +13,16 @@ export class LandingPageComponent implements OnInit {
 
   bannerList:any = [];
 
+  studentList = [
+    {"id": "15", "name": "Keshav", "age": "22", "rollno": "97", "subject": "CS"},
+    {"id": "97", "name": "Rahul", "age": "25", "rollno": "78", "subject": "CS"},
+    {"id": "97", "name": "Vikas", "age": "56", "rollno": "78", "subject": "CS"},
+    {"id": "97", "name": "raghav", "age": "589", "rollno": "18", "subject": "CS"},
+  ]
+
+
+
+
   constructor(private crudServices: CrudServicesService) { }
 
   ngOnInit(): void {
